@@ -15,6 +15,8 @@
 		3EAEEE6E1B0ED4720006A9EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EAEEE6D1B0ED4720006A9EB /* Images.xcassets */; };
 		3EAEEE711B0ED4720006A9EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EAEEE6F1B0ED4720006A9EB /* LaunchScreen.xib */; };
 		3EAEEE7D1B0ED4720006A9EB /* swift_modifiedingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAEEE7C1B0ED4720006A9EB /* swift_modifiedingTests.swift */; };
+		6AC542921B313CCD00687179 /* SSBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC542911B313CCD00687179 /* SSBaseViewController.swift */; };
+		6AC542941B313DE200687179 /* SSBaseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC542931B313DE200687179 /* SSBaseScrollView.swift */; };
 		9121237DAEB8A137F13BE6DD /* Pods_swift_modifieding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0C141B964EDCF54C6888B3 /* Pods_swift_modifieding.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,9 @@
 		3EAEEE7B1B0ED4720006A9EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EAEEE7C1B0ED4720006A9EB /* swift_modifiedingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_modifiedingTests.swift; sourceTree = "<group>"; };
 		5B0C141B964EDCF54C6888B3 /* Pods_swift_modifieding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_modifieding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC542901B313C3E00687179 /* Swift-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Bridge.h"; sourceTree = "<group>"; };
+		6AC542911B313CCD00687179 /* SSBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSBaseViewController.swift; path = BaseClass/SSBaseViewController.swift; sourceTree = "<group>"; };
+		6AC542931B313DE200687179 /* SSBaseScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SSBaseScrollView.swift; path = BaseClass/SSBaseScrollView.swift; sourceTree = "<group>"; };
 		DFCC9FB3306D3415A13B52E2 /* Pods-swift-modifieding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-modifieding.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-modifieding/Pods-swift-modifieding.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +93,7 @@
 		3EAEEE5F1B0ED4720006A9EB /* swift-modifieding */ = {
 			isa = PBXGroup;
 			children = (
+				6AC5428F1B313B9900687179 /* BaseClass */,
 				3EAEEE621B0ED4720006A9EB /* AppDelegate.swift */,
 				3EAEEE641B0ED4720006A9EB /* RootViewController.swift */,
 				3EAEEE661B0ED4720006A9EB /* DataViewController.swift */,
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				3EAEEE611B0ED4720006A9EB /* Info.plist */,
+				6AC542901B313C3E00687179 /* Swift-Bridge.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -131,6 +138,15 @@
 				5B0C141B964EDCF54C6888B3 /* Pods_swift_modifieding.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6AC5428F1B313B9900687179 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				6AC542911B313CCD00687179 /* SSBaseViewController.swift */,
+				6AC542931B313DE200687179 /* SSBaseScrollView.swift */,
+			);
+			name = BaseClass;
 			sourceTree = "<group>";
 		};
 		73A563EFACF30DDFCC34D763 /* Pods */ = {
@@ -189,8 +205,9 @@
 		3EAEEE551B0ED4720006A9EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SS;
 				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = GTUU;
+				ORGANIZATIONNAME = DRBBC;
 				TargetAttributes = {
 					3EAEEE5C1B0ED4720006A9EB = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -293,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC542941B313DE200687179 /* SSBaseScrollView.swift in Sources */,
 				3EAEEE651B0ED4720006A9EB /* RootViewController.swift in Sources */,
 				3EAEEE691B0ED4720006A9EB /* ModelController.swift in Sources */,
 				3EAEEE671B0ED4720006A9EB /* DataViewController.swift in Sources */,
+				6AC542921B313CCD00687179 /* SSBaseViewController.swift in Sources */,
 				3EAEEE631B0ED4720006A9EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +446,7 @@
 				INFOPLIST_FILE = "swift-modifieding/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift-modifieding/Swift-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -438,6 +458,7 @@
 				INFOPLIST_FILE = "swift-modifieding/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "swift-modifieding/Swift-Bridge.h";
 			};
 			name = Release;
 		};
